@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeteros</title>
+  <link rel="stylesheet" href="../styles/styles2.css">
+</head>
+<body>
+  <a href="../index.html" class="back-button">← Volver</a>
+  
+  <div class="product-container">
+    <!-- Producto 1 -->
+    <section class="fullscreen-product">
+      <div class="image-carousel">
+        <div class="carousel-images">
+          <img src="../imagenes/img_cuaderno_y_agendas/apuntes_enfermera.svg" alt="Tarjetero clásico">
+          <img src="../imagenes/img_cuaderno_y_agendas/apuntes_enfermera.svg" alt="Tarjetero clásico">
+        </div>
+        <div class="carousel-indicators">
+          <span class="active" onclick="showImage(0)"></span>
+          <span onclick="showImage(1)"></span>
+        </div>
+      </div>
+      <div class="product-info">
+        <h2>APUNTES DE UNA ENFERMERA</h2>
+        <p class="price">S/. 32.00</p>
+          
+        <!-- Listas en 2 columnas -->
+        <div class="two-column-list">
+          
+          <ul>
+            <p>Cuaderno de apuntes de enfermería</p>
+            <li>30 páginas con información en general de enfermería + 100 hojas cuadriculadas.</li>
+            <li>Principalmente para tomar apuntes o anotaciones.</li>
+            <li>Anillado doble ring.</li>
+            <li>Tapa dura.</li>
+            <li>Tamaño A5.</li>
+          </ul>
+
+        </div>
+    </section>
+
+    <!-- Producto 2 -->
+    <section class="fullscreen-product">
+      <div class="image-carousel">
+        <div class="carousel-images">
+          <img src="../imagenes/img_cuaderno_y_agendas/cuaderno_serumista.svg" alt="Tarjetero clásico">
+        </div>
+        <div class="carousel-indicators">
+          <span class="active" onclick="showImage(0)"></span>
+          <span onclick="showImage(1)"></span>
+        </div>
+      </div>
+      <div class="product-info">
+        <h2>CUADERNO SERUMISTA</h2>
+        <p class="price">S/. 35.50</p>
+        <!-- Listas en 2 columnas -->
+        <div class="two-column-list">
+          <ul>
+            <p>Cuaderno de apuntes </p>
+            <li>30 páginas con información útil para el serums, recomendaciones, que llevar al serums, calendario 2025-2026,turnario, entregas de informes, programas a tu cargo, AIS llenado de fua en CRED </li>
+            
+          </ul>
+          <ul>
+            <p> </p>
+            <li>Hojas cuadriculadas para apuntes</li>
+            <li>Anillado doble ring</li>
+            <li>Tapa dura</li>
+            <li>Tamaño A5</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  <script>
+    let currentIndex = 0;
+
+    // Función para mostrar la imagen actual
+    function showImage(index) {
+        const carousel = document.querySelector('.carousel-images');
+        const indicators = document.querySelectorAll('.carousel-indicators span');
+
+        // Mueve el carrusel a la imagen correspondiente
+        carousel.style.transform = `translateX(-${index * 50}%)`; // 50% por imagen
+
+        // Actualiza los indicadores
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+    }
+
+    // Función para cambiar automáticamente las imágenes
+    function autoSlide() {
+        currentIndex = (currentIndex + 1) % 2; // Alterna entre 0 y 1
+        showImage(currentIndex);
+    }
+
+    // Cambia la imagen cada 5 segundos
+    setInterval(autoSlide, 5000);
+
+    // Inicializa el carrusel
+    showImage(0);
+</script>
+
+</body>
+</html>

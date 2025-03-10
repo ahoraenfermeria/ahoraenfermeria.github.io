@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeteros</title>
+  <link rel="stylesheet" href="../styles/styles2.css">
+</head>
+<body>
+  <a href="../index.html" class="back-button">← Volver</a>
+  
+  <div class="product-container">
+    <!-- Producto 1 -->
+    <section class="fullscreen-product">
+      <div class="image-carousel">
+        <div class="carousel-images">
+          <img src="../imagenes/img_manuales/cred_anemia.svg" alt="Tarjetero clásico">
+          <img src="../imagenes/img_manuales/cred_anemia.svg" alt="Tarjetero clásico">
+        </div>
+        <div class="carousel-indicators">
+          <span class="active" onclick="showImage(0)"></span>
+          <span onclick="showImage(1)"></span>
+        </div>
+      </div>
+      <div class="product-info">
+        <h2>CRED</h2>
+        <p class="price">S/. 31.00</p>
+        <!-- Listas en 2 columnas -->
+        <div class="two-column-list">
+          <ul>
+            <p>Descripcion:</p>
+            <li>NTS Nº 137 </li>
+            <li>NTS Nº  213 </li>
+            <li>Tamaño A5 – anillado doble ring-  empastado.</li>
+          </ul>
+          
+          <ul>
+            <p>Contenido:</p>
+            <li>CRED</li>
+            <li>CONTROLES</li>
+            <li>EXAMENES</li>
+            <li>DESARROLLO DEL NIÑO</li>
+            <li>RECETARIO</li>
+            <li>NORMATIVA ANEMIA</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Producto 2 -->
+    <section class="fullscreen-product">
+      <div class="image-carousel">
+        <div class="carousel-images">
+          <img src="../imagenes/img_manuales/inmunizacion_cadena_frio.svg" alt="Tarjetero clásico">
+        </div>
+        <div class="carousel-indicators">
+          <span class="active" onclick="showImage(0)"></span>
+          <span onclick="showImage(1)"></span>
+        </div>
+      </div>
+      <div class="product-info">
+        <h2>INMUNIZACION Y CADENA DE FRIO</h2>
+        <p class="price">S/. 26.50</p>
+        <!-- Listas en 2 columnas -->
+        <div class="two-column-list">
+          <ul>
+            <p>Descripcion:</p>
+            <li>NTS Nº 196 </li>
+            <li>NTS Nº  136 </li>
+            <li>Tamaño A5 – anillado doble ring-  empastado.</li>
+          </ul>
+          
+          <ul>
+            <p>Contenido:</p>
+            <li>Inmunizaciones </li>
+            <li>Esquemas de vacunación </li>
+            <li>Vacunación en casos especiales</li>
+            <li>Formatos de ayuda</li>
+            <li>Cadena de frio</li>
+            <li>Apuntes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Producto 3 -->
+    <section class="fullscreen-product">
+      <div class="image-carousel">
+        <div class="carousel-images">
+          <img src="../imagenes/img_manuales/atencion_recien_nacido.svg" alt="Tarjetero clásico">
+        </div>
+        <div class="carousel-indicators">
+          <span class="active" onclick="showImage(0)"></span>
+          <span onclick="showImage(1)"></span>
+        </div>
+      </div>
+      <div class="product-info">
+        <h2>ATENCION INMEDIATA DEL RECIEN NACIDO</h2>
+        <p class="price">S/. 28.00</p>
+        <!-- Listas en 2 columnas -->
+        <div class="two-column-list">
+          <ul>
+            <p>Descripcion:</p>
+            <li>NTS Nº 214 </li>
+            <li>Tamaño A5 – anillado doble ring-  empastado.</li>
+          </ul>
+          
+          <ul>
+            <p>Contenido:</p>
+            <li>Esquema de atención inmediata del RN</li>
+            <li>Atención en alojamiento conjunto</li>
+            <li>Atención en alojamiento conjunto</li>
+            <li>Valoración según edad gestacional y peso</li>
+            <li>Valoración según edad gestacional y peso</li>
+            <li>Examen físico y neurológico</li>
+            <li>Signos de alarma</li>
+            <li>Recomendaciones en el neonato</li>
+            <li>Reanimación neonatal</li>
+            </ul>
+        </div>
+      </div>
+    </section>
+
+        <!-- Producto 4 -->
+        <section class="fullscreen-product">
+          <div class="image-carousel">
+            <div class="carousel-images">
+              <img src="../imagenes/img_manuales/terminologia_salud.svg" alt="Tarjetero clásico">
+            </div>
+            <div class="carousel-indicators">
+              <span class="active" onclick="showImage(0)"></span>
+              <span onclick="showImage(1)"></span>
+            </div>
+          </div>
+          <div class="product-info">
+            <h2>TERMINOLOGIA EN SALUD </h2>
+            <p class="price">S/. 26.50</p>
+            <!-- Listas en 2 columnas -->
+            <div class="two-column-list">
+              <ul>
+                <p>Descripcion:</p>
+                <li>Anillado doble ring</li>
+                <li>Impresión láser</li>
+                <li>Hoja bond</li>
+                <li>Tamaño A5 – anillado doble ring - empastado</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+
+  <script>
+    let currentIndex = 0;
+
+    // Función para mostrar la imagen actual
+    function showImage(index) {
+        const carousel = document.querySelector('.carousel-images');
+        const indicators = document.querySelectorAll('.carousel-indicators span');
+
+        // Mueve el carrusel a la imagen correspondiente
+        carousel.style.transform = `translateX(-${index * 50}%)`; // 50% por imagen
+
+        // Actualiza los indicadores
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+    }
+
+    // Función para cambiar automáticamente las imágenes
+    function autoSlide() {
+        currentIndex = (currentIndex + 1) % 2; // Alterna entre 0 y 1
+        showImage(currentIndex);
+    }
+
+    // Cambia la imagen cada 5 segundos
+    setInterval(autoSlide, 5000);
+
+    // Inicializa el carrusel
+    showImage(0);
+</script>
+
+</body>
+</html>

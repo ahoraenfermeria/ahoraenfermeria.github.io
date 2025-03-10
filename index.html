@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos Creativos</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <!-- Iconos de FontAwesome para redes sociales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Encabezado Principal -->
+    <header>
+      <img src="imagenes/logo2.svg" alt="Logo del Negocio" class="logo">
+    </header>
+
+    <!-- Iconos de Redes Sociales -->
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/51965056239" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Botones de Productos -->
+    <div class="product-buttons">
+      <div class="product" onclick="window.location.href='tarjeteros/index.html'">
+        <img src="imagenes/img_tarjetas/TBC.svg" alt="Tarjeteros">
+        <p>Tarjeteros</p>
+      </div>
+      <div class="product" onclick="window.location.href='manuales/index.html'">
+        <img src="imagenes/img_manuales/atencion_recien_nacido.svg" alt="Manuales">
+        <p>Manuales</p>
+      </div>
+      <div class="product" onclick="window.location.href='libretas/index.html'">
+        <img src="imagenes/img_libretas/enfermeria.svg" alt="Libretas">
+        <p>Libretas</p>
+      </div>
+      <div class="product" onclick="window.location.href='cuadernos/index.html'">
+        <img src="imagenes/img_cuaderno_y_agendas/apuntes_enfermera.svg" alt="Cuadernos y Agendas">
+        <p>Cuadernos y Agendas</p>
+      </div>
+      <div class="product" onclick="window.location.href='cartucheras/index.html'">
+        <img src="imagenes/img_riñoneras_y_cartucheras/rinonera.svg" alt="Riñoneras y Cartucheras">
+        <p>Riñoneras y Cartucheras</p>
+      </div>
+      <div class="product" onclick="window.location.href='practiproductos/index.html'">
+        <img src="imagenes/img_pratiproductos/rompeampollasTITI.svg" alt="Practiproductos">
+        <p>Practiproductos</p>
+      </div>
+      <div class="product" onclick="window.location.href='lapiceros/index.html'">
+        <img src="imagenes/img_lapiceros/lapicero_multicolor.svg" alt="Lapiceros">
+        <p>Lapiceros</p>
+      </div>
+    </div>
+  </div>
+ 
+</body>
+<script>
+    // Obtén todos los productos
+    const products = document.querySelectorAll('.product');
+
+    // Escucha el movimiento del cursor sobre cada producto
+    products.forEach(product => {
+        product.addEventListener('mousemove', (e) => {
+            const rect = product.getBoundingClientRect();
+            const x = e.clientX - rect.left; // Posición X relativa al producto
+            const y = e.clientY - rect.top;  // Posición Y relativa al producto
+
+            // Cambia el color del borde LED según la posición del cursor
+            product.style.setProperty('--led-color', `hsl(${(x / rect.width) * 360}, 100%, 50%)`);
+        });
+
+        product.addEventListener('mouseleave', () => {
+            // Restablece el color del borde LED al salir
+            product.style.setProperty('--led-color', '#40e0d0');
+        });
+    });
+</script>
+</html>

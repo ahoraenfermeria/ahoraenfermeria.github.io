@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeteros</title>
+  <link rel="stylesheet" href="../styles/styles2.css">
+</head>
+<body>
+  <a href="../index.html" class="back-button">← Volver</a>
+  
+  <div class="product-container">
+    <!-- Producto 1 -->
+    <section class="fullscreen-product">
+      <div class="image-carousel">
+        <div class="carousel-images">
+          <img src="../imagenes/img_riñoneras_y_cartucheras/rinonera.svg" alt="Tarjetero clásico">
+          <img src="../imagenes/img_riñoneras_y_cartucheras/rinonera.svg" alt="Tarjetero clásico">
+        </div>
+        <div class="carousel-indicators">
+          <span class="active" onclick="showImage(0)"></span>
+          <span onclick="showImage(1)"></span>
+        </div>
+      </div>
+      <div class="product-info">
+        <h2>RIÑONERA</h2>
+        <p class="price">S/. 40.00</p>
+          
+        <!-- Listas en 2 columnas -->
+        <div class="two-column-list">
+          
+          <ul>
+            <p>Riñonera con diseño hospitalario</p>
+            <li>Múltiples bolsillos</li>
+            <li>Regulable</li>
+          </ul>
+
+          <ul>
+            <p>Colores</p>
+            <li>Celeste</li>
+            <li>Rosado</li>
+            <li>Lila</li>
+          </ul>
+
+        </div>
+    </section>
+
+    <!-- Producto 2 -->
+    <section class="fullscreen-product">
+      <div class="image-carousel">
+        <div class="carousel-images">
+          <img src="../imagenes/img_riñoneras_y_cartucheras/cartucheraMIDI.svg" alt="Tarjetero clásico">
+        </div>
+        <div class="carousel-indicators">
+          <span class="active" onclick="showImage(0)"></span>
+          <span onclick="showImage(1)"></span>
+        </div>
+      </div>
+      <div class="product-info">
+        <h2>CARTUCHERA MIDI</h2>
+        <p class="price">S/. 25.50</p>
+        <!-- Listas en 2 columnas -->
+        <div class="two-column-list">
+          <ul>
+            <p>Cartuchera hospitalaria</p>
+            <li> Tamaño 25 cm x 14 cm</li>
+            <li> 1cierre</li>
+          </ul>
+          
+        </div>
+      </div>
+    </section>
+
+
+  <script>
+    let currentIndex = 0;
+
+    // Función para mostrar la imagen actual
+    function showImage(index) {
+        const carousel = document.querySelector('.carousel-images');
+        const indicators = document.querySelectorAll('.carousel-indicators span');
+
+        // Mueve el carrusel a la imagen correspondiente
+        carousel.style.transform = `translateX(-${index * 50}%)`; // 50% por imagen
+
+        // Actualiza los indicadores
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+    }
+
+    // Función para cambiar automáticamente las imágenes
+    function autoSlide() {
+        currentIndex = (currentIndex + 1) % 2; // Alterna entre 0 y 1
+        showImage(currentIndex);
+    }
+
+    // Cambia la imagen cada 5 segundos
+    setInterval(autoSlide, 5000);
+
+    // Inicializa el carrusel
+    showImage(0);
+</script>
+
+</body>
+</html>
