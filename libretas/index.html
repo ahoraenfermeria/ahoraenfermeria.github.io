@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tarjeteros</title>
   <link rel="stylesheet" href="../styles/styles2.css">
+  <!-- Agrega FontAwesome para el ícono de WhatsApp -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <a href="../index.html" class="back-button">← Volver</a>
@@ -23,15 +25,14 @@
         </div>
       </div>
       <div class="product-info">
-        <h2>Libreta de farmacología 
-        </h2>
+        <h2>Libreta de farmacología</h2>
         <p class="price">S/. 27.00</p>
         <!-- Listas en 2 columnas -->
         <div class="two-column-list">
           <ul>
             <p>Descripcion:</p>
             <li>119 fármacos por orden alfabético</li>
-            <li>Contiene hojitas de apuntes en la parte final. </li>
+            <li>Contiene hojitas de apuntes en la parte final.</li>
           </ul>
           
           <ul>
@@ -47,7 +48,6 @@
       </div>
     </section>
 
-
     <!-- Producto 2 -->
     <section class="fullscreen-product">
       <div class="image-carousel">
@@ -60,12 +60,12 @@
         </div>
       </div>
       <div class="product-info">
-        <h2>INMUNIZACION Y CADENA DE FRIO</h2>
+        <h2>Libreta del área clínica</h2>
         <p class="price">S/. 26.50</p>
         <!-- Listas en 2 columnas -->
-        <div class="two-column-list">       
+        <div class="two-column-list">
           <ul>
-            <p>Libreta del área clínica: </p>
+            <p>Descripcion:</p>
             <li>Útil para rotaciones a nivel hospitalario, internado clínico.</li>
             <li>Contiene 98 páginas.</li>
             <li>Hojitas para apuntes en la parte final.</li>
@@ -77,21 +77,25 @@
         </div>
       </div>
     </section>
+  </div>
 
-
+  <!-- Logo de WhatsApp -->
+  <a href="https://wa.me/c/51929125829" class="whatsapp-logo" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <script>
     let currentIndex = 0;
 
     // Función para mostrar la imagen actual
     function showImage(index) {
-        const carousel = document.querySelector('.carousel-images');
+        const carousels = document.querySelectorAll('.carousel-images');
         const indicators = document.querySelectorAll('.carousel-indicators span');
 
-        // Mueve el carrusel a la imagen correspondiente
-        carousel.style.transform = `translateX(-${index * 50}%)`; // 50% por imagen
+        carousels.forEach(carousel => {
+            carousel.style.transform = `translateX(-${index * 50}%)`; // 50% por imagen
+        });
 
-        // Actualiza los indicadores
         indicators.forEach((indicator, i) => {
             indicator.classList.toggle('active', i === index);
         });
@@ -108,7 +112,6 @@
 
     // Inicializa el carrusel
     showImage(0);
-</script>
-
+  </script>
 </body>
 </html>

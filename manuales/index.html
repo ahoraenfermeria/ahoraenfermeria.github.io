@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tarjeteros</title>
   <link rel="stylesheet" href="../styles/styles2.css">
+  <!-- Agrega FontAwesome para el ícono de WhatsApp -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <a href="../index.html" class="back-button">← Volver</a>
@@ -23,15 +25,15 @@
         </div>
       </div>
       <div class="product-info">
-        <h2>Manual de atención del niño ( CRED Y ANEMIA)</h2>
+        <h2>Manual de atención del niño (CRED Y ANEMIA)</h2>
         <p class="price">S/. 26.50</p>
         <!-- Listas en 2 columnas -->
         <div class="two-column-list">
           <ul>
             <p>Descripcion:</p>
-            <li>NTS Nº 137 </li>
-            <li>NTS Nº  213 </li>
-            <li>Tamaño A5 – anillado doble ring-  empastado.</li>
+            <li>NTS Nº 137</li>
+            <li>NTS Nº 213</li>
+            <li>Tamaño A5 – anillado doble ring- empastado.</li>
           </ul>
           
           <ul>
@@ -46,7 +48,6 @@
         </div>
       </div>
     </section>
-
 
     <!-- Producto 2 -->
     <section class="fullscreen-product">
@@ -66,15 +67,15 @@
         <div class="two-column-list">
           <ul>
             <p>Descripcion:</p>
-            <li>NTS Nº 196 </li>
-            <li>NTS Nº  136 </li>
-            <li>Tamaño A5 – anillado doble ring-  empastado.</li>
+            <li>NTS Nº 196</li>
+            <li>NTS Nº 136</li>
+            <li>Tamaño A5 – anillado doble ring- empastado.</li>
           </ul>
           
           <ul>
             <p>Contenido:</p>
-            <li>Inmunizaciones </li>
-            <li>Esquemas de vacunación </li>
+            <li>Inmunizaciones</li>
+            <li>Esquemas de vacunación</li>
             <li>Vacunación en casos especiales</li>
             <li>Formatos de ayuda</li>
             <li>Cadena de frio</li>
@@ -102,66 +103,69 @@
         <div class="two-column-list">
           <ul>
             <p>Descripcion:</p>
-            <li>NTS Nº 214 </li>
-            <li>Tamaño A5 – anillado doble ring-  empastado.</li>
+            <li>NTS Nº 214</li>
+            <li>Tamaño A5 – anillado doble ring- empastado.</li>
           </ul>
           
           <ul>
             <p>Contenido:</p>
             <li>Esquema de atención inmediata del RN</li>
             <li>Atención en alojamiento conjunto</li>
-            <li>Atención en alojamiento conjunto</li>
-            <li>Valoración según edad gestacional y peso</li>
             <li>Valoración según edad gestacional y peso</li>
             <li>Examen físico y neurológico</li>
             <li>Signos de alarma</li>
             <li>Recomendaciones en el neonato</li>
             <li>Reanimación neonatal</li>
-            </ul>
+          </ul>
         </div>
       </div>
     </section>
 
-        <!-- Producto 4 -->
-        <section class="fullscreen-product">
-          <div class="image-carousel">
-            <div class="carousel-images">
-              <img src="../imagenes/img_manuales/terminologia_salud.svg" alt="Tarjetero clásico">
-            </div>
-            <div class="carousel-indicators">
-              <span class="active" onclick="showImage(0)"></span>
-              <span onclick="showImage(1)"></span>
-            </div>
-          </div>
-          <div class="product-info">
-            <h2>TERMINOLOGIA EN SALUD </h2>
-            <p class="price">S/. 26.50</p>
-            <!-- Listas en 2 columnas -->
-            <div class="two-column-list">
-              <ul>
-                <p>Descripcion:</p>
-                <li>Anillado doble ring</li>
-                <li>Impresión láser</li>
-                <li>Hoja bond</li>
-                <li>Tamaño A5</li>
-              </ul>
-            </div>
-          </div>
-        </section>
+    <!-- Producto 4 -->
+    <section class="fullscreen-product">
+      <div class="image-carousel">
+        <div class="carousel-images">
+          <img src="../imagenes/img_manuales/terminologia_salud.svg" alt="Tarjetero clásico">
+        </div>
+        <div class="carousel-indicators">
+          <span class="active" onclick="showImage(0)"></span>
+          <span onclick="showImage(1)"></span>
+        </div>
+      </div>
+      <div class="product-info">
+        <h2>TERMINOLOGIA EN SALUD</h2>
+        <p class="price">S/. 26.50</p>
+        <!-- Listas en 2 columnas -->
+        <div class="two-column-list">
+          <ul>
+            <p>Descripcion:</p>
+            <li>Anillado doble ring</li>
+            <li>Impresión láser</li>
+            <li>Hoja bond</li>
+            <li>Tamaño A5</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
 
+  <!-- Logo de WhatsApp -->
+  <a href="https://wa.me/c/51929125829" class="whatsapp-logo" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
   <script>
     let currentIndex = 0;
 
     // Función para mostrar la imagen actual
     function showImage(index) {
-        const carousel = document.querySelector('.carousel-images');
+        const carousels = document.querySelectorAll('.carousel-images');
         const indicators = document.querySelectorAll('.carousel-indicators span');
 
-        // Mueve el carrusel a la imagen correspondiente
-        carousel.style.transform = `translateX(-${index * 50}%)`; // 50% por imagen
+        carousels.forEach(carousel => {
+            carousel.style.transform = `translateX(-${index * 50}%)`; // 50% por imagen
+        });
 
-        // Actualiza los indicadores
         indicators.forEach((indicator, i) => {
             indicator.classList.toggle('active', i === index);
         });
@@ -178,7 +182,6 @@
 
     // Inicializa el carrusel
     showImage(0);
-</script>
-
+  </script>
 </body>
 </html>
